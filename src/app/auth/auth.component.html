@@ -1,0 +1,6 @@
+<div class="center" *ngIf="!(user | async)?.uid">
+    <input class="form-element"  type="text" placeholder="Email" [(ngModel)]="email" />
+    <input class="form-element"  type="password" placeholder="Password" [(ngModel)]="password" (keyup.enter)="login()"/>
+    <button class="btn" (click)="login()" *ngIf="!(user | async)?.uid">Login</button>
+</div>
+<button class="btn" (click)="logout()" *ngIf="(user | async)?.uid">Logout</button>

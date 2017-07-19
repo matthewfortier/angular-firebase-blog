@@ -1,17 +1,1 @@
-<div>
-
-  <input type="text" id="message" placeholder="Username" [(ngModel)]="email" />
-  <input type="text" id="message" placeholder="Password" [(ngModel)]="password" />
-  
-
-  <button (click)="login()" *ngIf="!(user | async)?.uid">Login</button>
-  <button (click)="logout()" *ngIf="(user | async)?.uid">Logout</button>
-  <br>
-  <br>
-  <input type="text" id="message" *ngIf="(user | async)?.uid" placeholder="Title" [(ngModel)]="title" />
-  <br>
-  <textarea *ngIf="(user | async)?.uid" placeholder="Post Body" (keyup.enter)="Send()" [(ngModel)]="body"></textarea>
-  <!--<div id="details-container">
-      <p *ngFor="let item of items | async"><img src="../assets/images/pin.svg">{{item.message}}</p>
-  </div>-->
-</div>
+<router-outlet></router-outlet>
