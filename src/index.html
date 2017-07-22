@@ -7,8 +7,44 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
   <app-root></app-root>
 </body>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script>
+  var lFollowX = 0,
+      lFollowY = 0,
+      x = 0,
+      y = 0,
+      friction = 1 / 15;
+
+  function moveBackground() {
+    x += (lFollowX - x) * friction;
+    y += (lFollowY - y) * friction;
+    
+    translate = x + 'px, ' + y + 'px';
+
+    $('.hero').css({
+      'background-position': translate
+    });
+
+    window.requestAnimationFrame(moveBackground);
+  }
+
+  $(window).on('mousemove click', function(e) {
+
+    var lMouseX = Math.max(-25, Math.min(100, $(window).width() / 2 - e.clientX));
+    var lMouseY = Math.max(-25, Math.min(100, $(window).height() / 2 - e.clientY));
+    lFollowX = (20 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+    lFollowY = (10 * lMouseY) / 100;
+
+  });
+
+  moveBackground();
+</script>
 </html>

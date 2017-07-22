@@ -1,0 +1,116 @@
+.home-container
+    height: 100%
+    width: 100%
+    color: #3A4145
+
+    .hero
+        background-image: url('../../assets/icons/icons.png')
+        background-size: cover
+        background-position: center
+        height: 60vh
+
+    .hero-text
+        height: 60vh
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column        
+        text-align: left
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+
+        span:nth-child(1)
+            font-size: 85px
+            font-family: 'Raleway', sans-serif
+            font-weight: 700
+
+        span:nth-child(2)
+            font-size: 40px
+            font-family: 'Raleway', sans-serif
+            font-weight: 700
+
+        span:nth-child(3)
+            font-size: 25px
+            font-family: 'Raleway', sans-serif
+            font-weight: 700
+        
+
+.home-content
+    text-align: center
+
+    .projects
+        width: 78%
+        margin-left: 11%
+        text-align: center
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+
+        .project
+            height: 50vh
+            width: 37vw
+            margin-bottom: 50px
+            background-size: cover
+            background-position: center
+            box-shadow: 0 30px 40px -15px rgba(0,0,0,0.35)
+            position: relative
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-direction: column
+            cursor: pointer      
+
+            .frost
+                position: absolute
+                top: 0
+                left: 0
+                height: 100%
+                width: 100%
+
+            span
+                font-size: 35px
+                padding: 5px 20px
+                margin: 5px
+                border-radius: 5px
+                background-color: white
+                color: #3A4145
+                box-shadow: 0 30px 40px -15px rgba(0,0,0,0.35)
+                transition: all .2s ease-in-out
+
+            span:nth-child(3)
+                display: none
+
+            &:hover
+                background-size: 150%
+                animation: zoom .2s ease-in-out
+
+                span:nth-child(3)
+                    display: block
+                    animation: fadeIn .2s ease-in-out
+
+@keyframes zoom
+    from
+        background-size: 100%
+    to
+        background-size: 150%
+
+@keyframes fadeIn
+    from
+        transform: scale(.3)
+        opacity: 0
+    to
+        transform: scale(1)
+        opacity: 1
+
+@media only screen and (max-width : 992px)
+    .home-content
+        display: flex
+        justify-content: center
+
+        .projects
+            margin-left: 0
+            width: 100%
+            display: block
+
+            .project
+                width: 90vw
+                margin-left: 5vw

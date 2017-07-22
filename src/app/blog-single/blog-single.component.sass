@@ -3,20 +3,22 @@
 
     .left
         width: 22%
-        background-color: #f7f9fa
+        //background-color: #f7f9fa
 
     .right
         width: 22%
-        background-color: #f7f9fa
+        //background-color: #f7f9fa
 
     .post-single-body
         z-index: 10
         width: 56%
+        background-color: white
         color: #3A4145
         //color: #A1B6CE
         line-height: 1.6em
-        border-left: 1px solid rgba(0,0,0,0.12)
-        border-right: 1px solid rgba(0,0,0,0.12)        
+        border-left: 1px solid rgba(0,0,0,0.2)
+        border-right: 1px solid rgba(0,0,0,0.2)   
+        font-family: 'Roboto Slab', serif     
         //box-shadow: 0 19px 38px rgba(0,0,0,0.20), 0 15px 12px rgba(0,0,0,0.12)
 
         #post-single-title
@@ -35,3 +37,17 @@
     height: 100%
     width: 100%
     background: linear-gradient(to bottom,  rgba(137,255,241,0) 0%,rgba(0,0,0,1) 100%); /* W3C */
+
+@media only screen and (max-width : 992px)
+    .post-single-body
+        width: 100% !important
+        font-size: .8em
+
+        img
+            width: 100%
+
+    .left
+        display: none
+
+    .right
+        display: none

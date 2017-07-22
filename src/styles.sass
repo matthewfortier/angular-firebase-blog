@@ -1,6 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
 // Fonts 
-@import url('https://fonts.googleapis.com/css?family=Biryani|Muli|Prompt|Open+Sans|Roboto+Mono|Work+Sans:800');
+@import url('https://fonts.googleapis.com/css?family=Biryani|Muli|Prompt|Open+Sans|Roboto+Mono|Work+Sans:800')
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab')
 
 $black: #111
 $dark-gray: #222
@@ -18,168 +18,229 @@ body
     overflow-x: hidden
     margin: 0
     padding: 0
+    background-color: #f7f9fa;        
 
-nav
-    width: 250px
-    height: 100vh
-    position: fixed
+.navbar
+    position: relative
     z-index: 10
-    background-color: $nav
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
-    
-    .logo
-        height: 250px
-        width: 250px
-        color: white
+    background-color: #191e28
+    display: flex
+    justify-content: space-around 
+    overflow: hidden
+    margin-bottom: 20px
 
-        display: flex
-        justify-content: center
-        align-items: center
+    &.shadow
+        box-shadow: 0px 4px 10px #999;
 
-        .cursor
-            color: $red
+    .logo  
+        position: relative
+        font-size: 45px
+        margin-right: 20px
+        padding: 10px 0 10px 0
+        transition: all .1s ease-in-out
 
-        .logo-text
-            font-size: 15vh
-            color: #272727
+        .spinner
             position: absolute
-            z-index: -1
+            top: calc(42% - 50px)
+            left: calc(50% - 60px)
+            z-index: 0
+            height: 100px
+            width: 100px
+            border-radius: 50%
+            border-bottom: 10px solid #d9534f
+            border-left: 10px solid #d9534f
+            border-right: 10px solid transparent
+            border-top: 10px solid transparent
+            animation: spinForwards 3s linear infinite
 
-        .logo-name
-            color: white
-            position: absolute
-            display: flex
-            flex-direction: column
-            text-decoration: none
+            span
+                position: absolute
+                top: calc(35% - 35px)
+                left: calc(50% - 50px)
+                z-index: 0
+                height: 80px
+                width: 80px
+                border-radius: 50%
+                border-top: 10px solid rgba(217,83,79, .6)
+                border-left: 10px solid rgba(217,83,79, .6)
+                border-right: 10px solid transparent
+                border-bottom: 10px solid transparent
+                animation: spinForwards 6s .2s linear infinite
+                
 
-            #name-text
-                font-size: 4.5vh
-                margin-bottom: -5px
-
-            #name-first
-                font-size: 1.5vh
-
-            #name-last  
-                font-size: 1.5vh
-
-            &:hover
-                color: $red
-                transition: color .1s ease-in
-                cursor: pointer
-
-
-    .navigation
-        text-align: center
-        color: white
-        width: 100%
-        height: 50%
-        margin: 0 auto
-
-        a
-            margin-bottom: 50px
-
-        .link
-            cursor: pointer
+        .text
             position: relative
-            height: 50px
+            z-index: 1
 
-            li
-                list-style-type: none
-                display: flex
-                justify-content: center
-                align-items: center
-                height: 50px
-
-
-            span:nth-child(1)
-                position: absolute
-                height: 5px
-                width: 0%
-                top: 0
-                left: 0
-                background-color: $red
-                transition: width .2s ease-in-out
-
-            span:nth-child(3)
-                position: absolute
-                height: 5px
-                width: 0%
-                bottom: 0
-                right: 0
-                background-color: $red
-                transition: width .2s ease-in-out            
-
-            &:hover
-                span:nth-child(1)
-                    position: absolute
-                    height: 5px
-                    width: 100%
-                    top: 0
-                    left: 0
-                    background-color: $red
-                    transition: width .2s ease-in-out
-                    
-                span:nth-child(3)
-                    position: absolute
-                    height: 5px
-                    width: 100%
-                    bottom: 0
-                    right: 0
-                    background-color: $red
-                    transition: width .2s ease-in-out
+        &:hover
+            .spinner
+                animation: spinBackwards 3s linear infinite
+                
+            span
+                animation: spinBackwards 6s .2s linear infinite                
 
     .links
+        margin-left: 20px
+        padding: 10px 0 10px 0
+
+        ul
+            margin: 0
+            padding: 0
+            display: flex
+            list-style-type: none
+            height: 100%
+
+            .link
+                color: white
+                height: 100%
+                display: flex
+                padding: 0 20px
+                align-items: center
+                cursor: pointer
+                position: relative
+
+                span:nth-child(1)
+                    position: absolute
+                    top: 0
+                    left: 0
+                    height: 5px
+                    width: 0
+                    background-color: #d9534f
+                    pointer: cursor
+
+                &:hover > span
+                    width: 100%
+                    transition: all .1s ease-in-out
+
+    &:hover 
+        // .logo
+        //     padding: 40px 0 40px 0
+        //     transition: all .1s ease-in-out
+
+.menu-icon
+    display: none
+    justify-content: center
+    align-items: flex-end
+    flex-direction: column
+    position: relative
+    width: 75px
+
+    .menu-icon-middle
+        position: relative
+        width: 35px
+        height: 5px
+        margin-bottom: 6px
+
+        span
+            position: absolute
+            transition: all .2s ease-in-out
+            
+
+    span
+        display: block
+        width: 35px
+        height: 5px
+        background-color: white
+        margin: 3px 0
+        transition: all .2s ease-in-out
+        border-radius: 10px
+
+    &.active    
+        & > span
+            opacity: 0
+            transition: all .2s ease-in-out
+
+        .menu-icon-middle
+
+            span:nth-child(1)
+                transform: rotate(45deg)
+                transition: all .2s ease-in-out
+
+            span:nth-child(2)
+                transform: rotate(-45deg)
+                transition: all .2s ease-in-out    
+
+
+.mobile-links
+    position: absolute
+    top: -250px
+    left: 0
+    z-index: 5
+    height: 245px
+    background-color: #f7f9fa
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    transition: top .2s ease-out
+    
+    ul
+        list-style-type: none
+        margin: 0
+        padding: 0
         width: 100%
-        height: 50%
+
+    li
+        padding: 13px 0
+        width: 100%
+        border-top: 2px solid darken(#f7f9fa, 5)
+        text-align: center
+        cursor: pointer
+
+    &.active
+        top: 44px
+        transition: top .2s ease-in
 
 .container
-    width: calc(100% - 250px)
-    margin-left: 250px
-    //background: linear-gradient(#fff, #DDE3EA);
+    position: relative
+    z-index: 0 
 
-.blog-sidebar
-    position: fixed
-    z-index: 5
-    height: 100vh
-    width: 34.35%
-    margin-left: -34.35%
-    background-color: #222
-    color: white
+@media only screen and (max-width : 992px)
+    .navbar
+        margin: 0
+        padding: 0 15px
 
-    a:hover .blog-sidebar
-        margin-left: 0
+        .logo .text
+            font-size: .8em
 
-    .blog-sidebar-content
-        padding: 10px 10px 10px 270px
+        .links
+            font-size: 14px
 
-    &:hover
-        margin-left: 0
+        .mobile-links
+            display: block
 
-    &.out
-        margin-left: 0
-        animation: enter .2s ease-in-out
+    img
+        width: 100%
 
-    &.leave
-        margin-left: -34.35%
-        animation: leave .2s ease-in-out
+@media only screen and (max-width : 870px)
+    .menu-icon
+        display: flex
 
-@keyframes fill
-    0%
-        height: 5px
-        color: white
+    .navbar
+        padding: 0 15px
 
-    100%
-        height: 25px
-        color: white
+        .logo
+            text-align: center
+            font-size: 30px
 
-@keyframes enter
-    0%
-        margin-left: -34.35%
-    100%
-        margin-left: 0
+    .links 
+        display: none
 
-@keyframes leave
-    0%
-        margin-left: 0
-    100%
-        margin-left: -34.35%
+@media only screen and (max-width : 340px)
+    .navbar 
+        padding: 0 15px
+
+        .logo .text
+            font-size: .6em
+                
+@keyframes spinForwards
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+@keyframes spinBackwards
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(-360deg)
