@@ -14,6 +14,7 @@ export class AppComponent {
 
   mobileMenuOut: boolean = false;
   shadow: boolean = true;
+  scrollTop: number = 0;
   
   constructor(@Inject(DOCUMENT) private document: Document, private route:ActivatedRoute) {
     let url = this.route.url.subscribe(result => {
@@ -25,6 +26,20 @@ export class AppComponent {
 
   mobileMenu() {
     this.mobileMenuOut = !this.mobileMenuOut;
+  }
+
+  @HostListener("window:scroll", [])
+  onWindowScroll() {
+    this.scrollTop = this.document.body.scrollTop;
+
+    let h = this.document.documentElement;
+    let b = this.document.body;
+    let st = 'scrollTop';
+    let sh = 'scrollHeight';
+
+    let percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+
+    this.document.getElementById("scroll-bar").style.width = percent + '%';
   }
 
 }
