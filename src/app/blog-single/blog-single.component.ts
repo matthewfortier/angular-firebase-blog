@@ -18,6 +18,7 @@ export class BlogSingleComponent implements OnInit {
 
   
   title: string;
+  hero: string;
   slug: string;
   body: string;
   category: string;
@@ -31,6 +32,7 @@ export class BlogSingleComponent implements OnInit {
 
     this.postsService.getPost(this.route.snapshot.paramMap.get('slug')).subscribe(result => {
       this.title = result[0].title;
+      this.hero = result[0].hero;
       this.slug = result[0].slug;
       this.body = result[0].body;
     });

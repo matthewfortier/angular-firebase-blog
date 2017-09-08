@@ -2,7 +2,7 @@
     <div class="left"></div>
     <div class="post-single-body">
         <h1 id="post-single-title">{{ title }}</h1>
-        <img src="http://i.imgur.com/fGX6Z9z.jpg" alt="">
+        <img src="{{ hero }}" alt="">
         <div class="markdown" markdown-to-html [data]="body"></div>
         <div class="disqus" [style.padding]="'20px'">
             <disqus [identifier]="slug" [url]="" [lang]="'en'"></disqus>            

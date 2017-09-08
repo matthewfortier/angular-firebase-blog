@@ -1,11 +1,17 @@
-<div class="center" *ngIf="user">
-    <input class="form-element" class="form-element" type="text"  placeholder="Title" [(ngModel)]="title" />
-    <textarea class="form-element textarea" placeholder="Post Body" (keyup.enter)="create()" [(ngModel)]="body"></textarea>
-    <div class="buttons">
-        <button class="btn" (click)="create()" *ngIf="!slug">Create Post</button>
-        <button class="btn" (click)="update()" *ngIf="slug">Update Post</button>        
-        <button class="btn" (click)="delete()" *ngIf="slug">Delete Post</button>        
+<div class="post-container">
+    <div class="center" *ngIf="user">
+        <label>Post Title</label>
+        <input class="form-element" class="form-element" type="text"  placeholder="Title" [(ngModel)]="title" />
+        <label>Post Hero</label>
+        <input class="form-element" class="form-element" type="text"  placeholder="Hero Image" [(ngModel)]="hero" />
+        <label>Post Content</label>        
+        <textarea class="form-element textarea" placeholder="Post Body" (keyup.enter)="create()" [(ngModel)]="body"></textarea>
+        <div class="buttons">
+            <button class="btn" (click)="create()" *ngIf="!slug">Create Post</button>
+            <button class="btn" (click)="update()" *ngIf="slug">Update Post</button>        
+            <button class="btn" (click)="delete()" *ngIf="slug">Delete Post</button>        
+        </div>
     </div>
+    
+    <li (click)="logout()">Logout</li>
 </div>
-
-<li (click)="logout()">Logout</li>

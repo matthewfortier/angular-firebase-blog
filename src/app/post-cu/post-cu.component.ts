@@ -20,6 +20,7 @@ export class PostCuComponent implements OnInit {
   items: FirebaseListObservable<any[]>;
   item: any;
   title: string = '';
+  hero: string = '';
   body: string = '';
   slug: string = '';
   category: string = 'Coding';
@@ -50,6 +51,7 @@ export class PostCuComponent implements OnInit {
       this.item = this.postsService.getPost(this.slug)
       .subscribe((result) => {
         this.title = result[0].title;
+        this.hero = result[0].hero;
         this.body = result[0].body;
         this.key = result[0].$key;
       });
@@ -58,12 +60,12 @@ export class PostCuComponent implements OnInit {
   }
 
   create() {
-    this.items.push({ title: this.title, body: this.body, slug: this.slugify(this.title), tags: this.tags, category: this.category });
+    this.items.push({ title: this.title, hero: this.hero, body: this.body, slug: this.slugify(this.title), tags: this.tags, category: this.category });
     this.router.navigate(['/blog/' + this.slugify(this.title)]);
   }
 
   update() {
-    this.af.object('/posts/' + this.key).update({ title: this.title, body: this.body, slug: this.slugify(this.title), tags: this.tags, category: this.category });
+    this.af.object('/posts/' + this.key).update({ title: this.title, hero: this.hero, body: this.body, slug: this.slugify(this.title), tags: this.tags, category: this.category });
     this.router.navigate(['/blog/' + this.slugify(this.title)]);    
   }
 
