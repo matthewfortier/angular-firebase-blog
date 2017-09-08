@@ -21,10 +21,15 @@ import { BlogSingleComponent } from './blog-single/blog-single.component';
 import { PostCuComponent } from './post-cu/post-cu.component';
 
 import { PostsService } from './posts.service';
+import { ProjectsService } from './projects.service';
 import { AuthComponent } from './auth/auth.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
+import { ResumeComponent } from './resume/resume.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { ProjectComponent } from './project/project.component';
+import { ProjectSingleComponent } from './project-single/project-single.component';
 
 export const firebaseConfig = {
   apiKey: firebase.apiKey,
@@ -42,8 +47,11 @@ const appRoutes: Routes = [
   { path: 'blog/:slug', component: BlogSingleComponent },
   { path: '', component: HomeComponent },
   { path: 'auth', component: AuthComponent },
-  { path: 'about', component: AboutComponent },
+  { path: 'connect', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'resume', component: ResumeComponent },
+  { path: 'portfolio', component: PortfolioComponent },
+  { path: 'project-single', component: ProjectSingleComponent },
 ];
 
 @NgModule({
@@ -55,7 +63,11 @@ const appRoutes: Routes = [
     AuthComponent,
     AboutComponent,
     ContactComponent,
-    HomeComponent
+    HomeComponent,
+    ResumeComponent,
+    PortfolioComponent,
+    ProjectComponent,
+    ProjectSingleComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -71,7 +83,7 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [PostsService],
+  providers: [PostsService, ProjectsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,89 @@
+.portfolio-content
+    text-align: center
+    padding-top: 20px
+
+    .projects
+        width: 78%
+        margin-left: 11%
+        text-align: center
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+
+        .project
+            height: 50vh
+            width: 37vw
+            margin-bottom: 50px
+            box-shadow: 0 30px 40px -15px rgba(0,0,0,0.35)
+            position: relative
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-direction: column
+            cursor: pointer
+            transition: all .2s ease-in-out
+
+            span
+                font-size: 35px
+                padding: 5px 20px
+                margin: 5px
+                border-radius: 5px
+                background-color: white
+                color: #3A4145
+                box-shadow: 0 30px 40px -15px rgba(0,0,0,0.35)
+                transition: height .2s ease-in-out
+                z-index: 5
+
+            span:nth-child(3)
+                display: none
+                font-size: 20px                
+
+            .project-image
+                position: absolute
+                top: 0
+                left: 0
+                height: 100%
+                width: 100%
+                background-size: cover
+                background-position: center
+                animation: zoomOut .2s ease-in-out
+                z-index: 0
+                
+
+            &:hover
+                transform: scale(1.1)
+                transition: all .2s ease-in-out
+
+                span:nth-child(3)
+                    display: block
+                    animation: fadeIn .2s ease-in-out
+
+@keyframes fadeIn
+    from
+        transform: scale(.3)
+        opacity: 0
+    to
+        transform: scale(1)
+        opacity: 1
+
+@keyframes fadeOut
+    from
+        transform: scale(1)
+        opacity: 1
+    to
+        transform: scale(.3)
+        opacity: 0
+
+@media only screen and (max-width : 1024px)
+    .portfolio-content
+        display: flex
+        justify-content: center
+
+        .projects
+            margin-left: 0
+            width: 100%
+            display: block
+
+            .project
+                width: 90vw
+                margin-left: 5vw
