@@ -1,1 +1,13 @@
-<h1 [routerLink]="['/blog/' + item.slug]" *ngFor="let item of items | async">{{ item.title }}</h1>
+<div class="all">
+
+    <div class="post-card" [routerLink]="['/blog/' + item.slug]" *ngFor="let item of items | async">
+        <h1>{{ item.title }}</h1>
+        <img src="{{ item.hero }}" alt="{{ item.title }} image">
+        <div class="markdown" markdown-to-html>{{ item.body.substr(0,1000) }}</div>
+        <div class="post-buttons">
+            <button>Share</button>
+            <button>Read More</button>
+        </div>
+    </div>
+
+</div>
