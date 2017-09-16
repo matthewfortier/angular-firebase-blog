@@ -1,3 +1,19 @@
-<p>
-  project works!
-</p>
+<div class="project-container">
+  <div class="center" *ngIf="user">
+      <label>Project Title</label>
+      <input class="form-element" class="form-element" type="text"  placeholder="Title" [(ngModel)]="title" />
+      <label>Project Images</label>
+      <textarea class="form-element" placeholder="Project Body" [(ngModel)]="hero"></textarea>      
+      <label>Project Codepen</label>
+      <textarea class="form-element" placeholder="Project Body" [(ngModel)]="codepen"></textarea>      
+      <label>Project Content</label>        
+      <textarea class="form-element textarea" placeholder="Project Body" (keyup.enter)="create()" [(ngModel)]="body"></textarea>
+      <div class="buttons">
+          <button class="btn" (click)="create()" *ngIf="!slug">Create Post</button>
+          <button class="btn" (click)="update()" *ngIf="slug">Update Post</button>        
+          <button class="btn" (click)="delete()" *ngIf="slug">Delete Post</button>        
+      </div>
+  </div>
+  
+  <li (click)="logout()">Logout</li>
+</div>

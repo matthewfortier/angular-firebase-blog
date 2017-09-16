@@ -14,6 +14,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { MarkdownToHtmlModule } from 'ng2-markdown-to-html';
 import { DisqusModule } from "ngx-disqus";
+import { SlickModule } from 'ngx-slick';
 
 import { firebase } from '../environments/firebase.config';
 import { BlogComponent } from './blog/blog.component';
@@ -42,7 +43,9 @@ export const firebaseConfig = {
 
 const appRoutes: Routes = [
   { path: 'post/create', component: PostCuComponent },
+  { path: 'project/create', component: ProjectComponent },
   { path: 'post/:slug', component: PostCuComponent },
+  { path: 'project/:slug', component: ProjectComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'blog/:slug', component: BlogSingleComponent },
   { path: '', component: HomeComponent },
@@ -51,7 +54,7 @@ const appRoutes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'resume', component: ResumeComponent },
   { path: 'portfolio', component: PortfolioComponent },
-  { path: 'project-single', component: ProjectSingleComponent },
+  { path: 'portfolio/:slug', component: ProjectSingleComponent },
 ];
 
 @NgModule({
@@ -76,6 +79,7 @@ const appRoutes: Routes = [
     ),
     MarkdownToHtmlModule.forRoot(),
     DisqusModule.forRoot('matthewfortier'),
+    SlickModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,

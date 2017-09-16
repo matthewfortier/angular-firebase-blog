@@ -12,11 +12,11 @@ export class ProjectsService {
 
   constructor(public afAuth: AngularFireAuth, public af: AngularFireDatabase) { }
 
-  getPosts() {
+  getProjects() {
     return this.af.list('/projects');
   }
 
-  getPost( slug : string ) {
+  getProject( slug : string ) {
     return this.af.list('/projects', {
       query: {
         orderByChild: 'slug',

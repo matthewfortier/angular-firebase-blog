@@ -72,18 +72,19 @@ body
                 border-right: 10px solid transparent
                 border-bottom: 10px solid transparent
                 animation: spinForwards 6s .2s linear infinite
-                
 
         .text
             position: relative
             z-index: 1
 
         &:hover
+            transition: all .1s ease-in-out
+
             .spinner
-                animation: spinBackwards 3s linear infinite
+                animation: spinForwards 1.5s linear infinite
                 
             span
-                animation: spinBackwards 6s .2s linear infinite                
+                animation: spinForwards 3s .1s linear infinite                
 
     .links
         margin-left: 20px
@@ -201,6 +202,11 @@ body
 .container
     position: relative
     z-index: 0 
+
+
+.slick-dots
+    transform: scale(1.8)
+    
 
 @media only screen and (max-width : 992px)
     .navbar
