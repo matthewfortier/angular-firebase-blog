@@ -60,12 +60,12 @@ export class PostCuComponent implements OnInit {
   }
 
   create() {
-    this.items.push({ title: this.title, hero: this.hero, body: this.body, slug: this.slugify(this.title), tags: this.tags, category: this.category });
+    this.items.push({ title: this.title, hero: this.hero, body: this.body, slug: this.slugify(this.title), tags: this.tags, category: this.category, created: new Date().toLocaleDateString(), updated: '' });
     this.router.navigate(['/blog/' + this.slugify(this.title)]);
   }
 
   update() {
-    this.af.object('/posts/' + this.key).update({ title: this.title, hero: this.hero, body: this.body, slug: this.slugify(this.title), tags: this.tags, category: this.category });
+    this.af.object('/posts/' + this.key).update({ title: this.title, hero: this.hero, body: this.body, slug: this.slugify(this.title), tags: this.tags, category: this.category, updated: new Date().toLocaleDateString() });
     this.router.navigate(['/blog/' + this.slugify(this.title)]);    
   }
 

@@ -18,6 +18,8 @@ export class BlogSingleComponent implements OnInit {
 
   
   title: string;
+  created: string;
+  updated: string;
   hero: string;
   slug: string;
   body: string;
@@ -35,6 +37,8 @@ export class BlogSingleComponent implements OnInit {
       this.hero = result[0].hero;
       this.slug = result[0].slug;
       this.body = result[0].body;
+      this.created = result[0].created;
+      this.updated = result[0].updated;
     });
   }
 

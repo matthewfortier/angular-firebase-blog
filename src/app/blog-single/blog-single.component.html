@@ -2,6 +2,18 @@
     <div class="left"></div>
     <div class="post-single-body">
         <h1 id="post-single-title">{{ title }}</h1>
+        <div class="post-header">
+            <div class="post-author">
+                <div class="author-image"></div>
+                <h4>Matthew Fortier</h4>
+                <span id="timestamp">{{ updated }}</span>                            
+            </div>
+            <div class="post-share">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </div>
+        </div>
         <img src="{{ hero }}" alt="">
         <div class="markdown" markdown-to-html [data]="body"></div>
         <div class="disqus" [style.padding]="'20px'">
