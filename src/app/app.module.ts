@@ -13,6 +13,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { MarkdownToHtmlModule } from 'ng2-markdown-to-html';
+import { ResponsiveModule } from 'ng2-responsive'
 import { DisqusModule } from "ngx-disqus";
 import { SlickModule } from 'ngx-slick';
 
@@ -77,6 +78,7 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
+    ResponsiveModule,
     MarkdownToHtmlModule.forRoot(),
     DisqusModule.forRoot('matthewfortier'),
     SlickModule.forRoot(),

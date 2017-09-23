@@ -1,123 +1,269 @@
-.home-container
+h1
+    font-size: 85px
+    color: #191e28
+    font-family: 'Raleway', sans-serif
+    font-weight: 500
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),0px 8px 13px rgba(0,0,0,0.1),0px 18px 23px rgba(0,0,0,0.1)
+
+h2
+    font-size: 50px
+    color: #191e28
+    font-family: 'Raleway', sans-serif
+    font-weight: 500    
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),0px 8px 13px rgba(0,0,0,0.1),0px 18px 23px rgba(0,0,0,0.1)
+
+h3
+    font-size: 35px
+    color: #191e28
+    font-family: 'Raleway', sans-serif
+    font-weight: 500    
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),0px 8px 13px rgba(0,0,0,0.1),0px 18px 23px rgba(0,0,0,0.1)
+
+.space-frames
+    margin-top: -90px
+    background-color: #eee
+    text-align: center    
+
+.portrait-image
+    height: 200px
+    width: 200px
+    background-image: url('/assets/me2.jpg')
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    background-position: center
+    margin: 0 auto
+    border-radius: 50%
+    border: 5px #d9534f solid
+
+.screenshot
+    height: 450px
+    width: auto
+    box-shadow: 0px 20px 84px 0px #8e8e8e;
+
+.icon
+    height: 100px
+    width: auto;
+    box-shadow: 0px 20px 84px 0px #8e8e8e;
+
+
+
+
+// Loader Styles
+
+.container
+  width: 600px
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+  
+.loader
+  height: 100px
+  width: 100px
+  margin: 50px
+  
+  
+.loader1
+  height: 100%
+  width: 100%
+  position: relative
+  
+  div:nth-child(1)
+    top: 0
+    left: 0
+    position: absolute
     height: 100%
     width: 100%
-    color: #3A4145
+    border-radius: 50%
+    border: 10px solid #d9534f
+    border-left: 10px solid transparent
+    animation: spinForwards 2s linear infinite
+    
+  div:nth-child(2)
+    top: 0
+    left: 0
+    margin-left: 10%
+    margin-top: 10%
+    position: absolute
+    height: 80%
+    width: 80%
+    border-radius: 50%
+    border: 10px solid rgba(217,83,79, .6)
+    border-left: 10px solid transparent
+    border-bottom: 10px solid transparent
+    animation: spinForwards 1s linear infinite
+  
+.loader2
+  height: 100%
+  width: 100%
+  position: relative
+  
+  div:nth-child(1)
+    top: 0
+    left: 0
+    position: absolute
+    height: 100%
+    width: 100%
+    padding: 10px
+    border-radius: 50%
+    background-color: rgba(217,83,79, .6)
+    animation: fade1 1.5s ease-in-out infinite
+    
+  div:nth-child(2)
+    top: 0
+    left: 0
+    margin-left: 10%
+    margin-top: 10%
+    padding: 10px
+    position: absolute
+    height: 80%
+    width: 80%
+    border-radius: 50%
+    background-color: #d9534f
+    animation: fade2 .75s ease-in-out infinite
+  
+.loader3
+  height: 100%
+  width: 100%
+  position: relative
+  
+  div:nth-child(1)
+    top: 0
+    left: 0
+    position: absolute
+    height: 100%
+    width: 100%
+    padding: 10px
+    border-radius: 50%
+    background-color: rgb(217,83,79)
+    animation: fade3 .75s ease-in-out infinite
+  
+.loader4
+  height: 100%
+  width: 100%
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  
+  div
+    height: 25%
+    width: 25%
+    border-radius: 15px
+    margin-right: 5px
+    margin-left: 5px
+    background-color: rgb(217,83,79)
+    
+    &.bouncing
+      animation: bounce 1000ms ease-in-out infinite
+      animation-delay: 3600ms
+      
+    &:nth-child(1)
+      animation-delay: 0ms
+    &:nth-child(2)
+      animation-delay: 333ms
+    &:nth-child(3)
+      animation-delay: 666ms
+    
+.loader5
+  height: 100%
+  width: 100%
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  
+  div
+    height: 50%
+    width: 10%
+    border-radius: 15px
+    margin-right: 5px
+    margin-left: 5px
+    background-color: rgb(217,83,79)
+    
+    &:nth-child(1)
+      animation: bars .5s ease-in-out infinite
+    &:nth-child(2)
+      animation: bars .5s .2s ease-in-out infinite
+    &:nth-child(3)
+      animation: bars .5s .4s ease-in-out infinite
+    &:nth-child(4)
+      animation: bars .5s .6s ease-in-out infinite
+  
+    
+.loader6
+  height: 100%
+  width: 100%
+  position: relative
+  background-color: rgb(217,83,79)
+  border-radius: 2px
+  animation: block 1.2s ease-in-out infinite
+    
+    
+@keyframes spinForwards
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+  
+@keyframes spinBackwards
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(-360deg)
+  
+@keyframes fade1
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(.35)
+  100%
+    transform: scale(1)
+  
+@keyframes fade2
+  0%
+    transform: scale(.5)
+  50%
+    transform: scale(.1)
+  100%
+    transform: scale(.5)
 
-    .hero
-        background-image: url('../../assets/icons/icons.png')
-        background-size: cover
-        background-position: center
-        height: 60vh
-
-    .hero-text
-        height: 60vh
-        display: flex
-        justify-content: center
-        align-items: center
-        flex-direction: column        
-        text-align: left
-        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
-
-        span:nth-child(1)
-            font-size: 85px
-            font-family: 'Raleway', sans-serif
-            font-weight: 700
-
-        span:nth-child(2)
-            font-size: 40px
-            font-family: 'Raleway', sans-serif
-            font-weight: 700
-
-        span:nth-child(3)
-            font-size: 25px
-            font-family: 'Raleway', sans-serif
-            font-weight: 700
-        
-
-.home-content
-    text-align: center
-
-    .projects
-        width: 78%
-        margin-left: 11%
-        text-align: center
-        display: flex
-        justify-content: space-between
-        flex-wrap: wrap
-
-        .project
-            height: 50vh
-            width: 37vw
-            margin-bottom: 50px
-            box-shadow: 0 30px 40px -15px rgba(0,0,0,0.35)
-            position: relative
-            display: flex
-            justify-content: center
-            align-items: center
-            flex-direction: column
-            cursor: pointer
-            transition: all .2s ease-in-out
-
-            span
-                font-size: 35px
-                padding: 5px 20px
-                margin: 5px
-                border-radius: 5px
-                background-color: white
-                color: #3A4145
-                box-shadow: 0 30px 40px -15px rgba(0,0,0,0.35)
-                transition: height .2s ease-in-out
-                z-index: 5
-
-            span:nth-child(3)
-                display: none
-
-            .project-image
-                position: absolute
-                top: 0
-                left: 0
-                height: 100%
-                width: 100%
-                background-size: cover
-                background-position: center
-                animation: zoomOut .2s ease-in-out
-                z-index: 0
-                
-
-            &:hover
-                transform: scale(1.1)
-                transition: all .2s ease-in-out
-
-                span:nth-child(3)
-                    display: block
-                    animation: fadeIn .2s ease-in-out
-
-@keyframes fadeIn
-    from
-        transform: scale(.3)
-        opacity: 0
-    to
-        transform: scale(1)
-        opacity: 1
-
-@keyframes fadeOut
-    from
-        transform: scale(1)
-        opacity: 1
-    to
-        transform: scale(.3)
-        opacity: 0
-
-@media only screen and (max-width : 992px)
-    .home-content
-        display: flex
-        justify-content: center
-
-        .projects
-            margin-left: 0
-            width: 100%
-            display: block
-
-            .project
-                width: 90vw
-                margin-left: 5vw
+@keyframes fade3
+  0%
+    transform: scale(.2)
+    opacity: 1
+  100%
+    transform: scale(1)
+    opacity: 0
+  
+@keyframes bounce
+  0%
+    transform: translateY(0)
+  33%
+    transform: translateY(0)
+  50%
+    transform: translateY(-10px)
+  100%
+    transform: translateY(0)
+  
+@keyframes bars
+  0%
+    transform: translateY(5px)
+  50%
+    transform: translateY(-10px)
+  100%
+    transform: translateY(5px)
+  
+@keyframes block
+  0%
+    transform: rotateY(85deg)
+  25%
+    transform: rotateY(-85deg)
+    transform: rotateX(0deg)
+  50%
+    transform: rotateX(85deg)
+  75%
+    transform: rotateY(85deg)
+    transform: rotateX(0deg)
+  100%
+    transform: rotateY(-85deg)

@@ -2,7 +2,12 @@
     <div class="left"></div>
     <div class="project-single-body">
         <h1 id="project-single-title">{{ title }}</h1>
-        <ngx-slick *ngIf="!codepen" class="carousel" #slickModal="slick-modal" [config]="slideConfig">
+        <ngx-slick *isDesktop class="carousel" #slickModal="slick-modal" [config]="slideConfig">
+            <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                  <img src="{{ slide }}" alt="" width="100%">
+            </div>
+        </ngx-slick>
+        <ngx-slick *isMobile class="carousel" #slickModal="slick-modal" [config]="mobileSlideConfig">
             <div ngxSlickItem *ngFor="let slide of slides" class="slide">
                   <img src="{{ slide }}" alt="" width="100%">
             </div>

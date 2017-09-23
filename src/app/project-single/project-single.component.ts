@@ -33,6 +33,15 @@ export class ProjectSingleComponent implements OnInit {
     "dots": true
   };
 
+  mobileSlideConfig = {
+    "slidesToShow": 1, 
+    "slidesToScroll": 1, 
+    "autoplay": true, 
+    "autoplaySpeed": 5000,
+    "arrows": false,
+    "dots": false
+  };
+
   constructor(public af: AngularFireDatabase, 
     private route: ActivatedRoute,
     private router: Router,
