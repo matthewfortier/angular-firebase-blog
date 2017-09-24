@@ -1,21 +1,27 @@
-<div class="space-frames">
+<div *showItDevice="['desktop']" class="space-frames">
   <div class="space-frame">
     <section class="space-inner-frame">
       <h1>Welcome!</h1>
+      <div class="scroll-down" [class.fade]="scrollFade">
+        <p>Scroll Down</p>
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+      </div>
     </section>
   </div>
-  <div class="space-frame" data-transition="slideInTop slideOutDown">
+  <div class="space-frame" data-enter="slideInTop scaleIn" data-exit="fadeOut">
     <section class="space-inner-frame">
       <div class="portrait-image"></div>
       <h2>My name is Matthew Fortier.</h2>
     </section>
   </div>
-  <div class="space-frame" style="background-image: url('/assets/icons/icons.png'); background-size: contain;" data-transition="scaleIn scaleOut">
+  <div class="space-frame" style="background-image: url('/assets/icons/icons.png'); background-size: contain;" data-enter="scaleIn" data-exit="fadeOut">
     <section class="space-inner-frame">
       <h2>I am a Full-Stack Web Developer</h2>
     </section>
   </div>
-  <div class="space-frame" style="background-image: url('https://i.imgur.com/w9znJwK.jpg'); background-size: cover;">
+  <div class="space-frame" style="background-image: url('https://i.imgur.com/w9znJwK.jpg'); background-size: cover;" data-enter="fadeIn" data-exit="fadeOut">
     <section class="space-inner-frame">
       <img style="height: 400px; width: auto; margin-bottom: -20px;" src="https://i.imgur.com/jhTbk48.png" alt="">
       <h2>from Kennebunk, ME</h2>
@@ -32,13 +38,13 @@
       <h3>and I am extremely passionate about...</h3>
     </section>
   </div>
-  <div class="space-frame" data-transition="slideInTop slideOutDown">
+  <div class="space-frame" data-enter="slideInTop" data-exit="fadeOut">
     <section class="space-inner-frame">
       <img class="screenshot" src="https://i.imgur.com/rrxOoM8.png?1" alt="">
       <h3>Front-End Development / Design</h3>
     </section>
   </div>
-  <div class="space-frame" data-transition="slideInRight slideOutLeft">
+  <div class="space-frame" data-enter="slideInRight" data-exit="fadeOut">
     <section class="space-inner-frame">
         <div class="container">
             <div class="loader">
@@ -82,7 +88,7 @@
       <h3>CSS Animations</h3>
     </section>
   </div>
-  <div class="space-frame" style="background-image: url('https://i.imgur.com/2FXxKQ2.jpg'); background-size: cover;">
+  <div class="space-frame" style="background-image: url('https://i.imgur.com/2FXxKQ2.jpg'); background-size: cover;" data-enter="fadeIn" data-exit="fadeOut">
     <section class="space-inner-frame">
       <img src="https://i.imgur.com/dNgu6Ve.png" alt="">
       <h3 style="color: white;">and the Boston Red Sox!</h3>
@@ -95,4 +101,32 @@
       <button>Learn More About Me!</button>
     </section>
   </div>
+</div>
+
+<div *showItDevice="['mobile','tablet']" class="mobile-home">
+  <div class="mobile-landing">
+    <h1>Welcome!</h1>
+    <div class="scroll-down" [class.fade]="scrollFade">
+      <p>Scroll Down</p>
+      <div class="scroll-mouse mobile">
+        <div class="scroll-wheel"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-card" data-aos="slide-right">
+      <div class="portrait-image"></div>
+      <h2>My name is Matthew Fortier.</h2>
+  </div>
+
+  <div class="mobile-card" data-aos="fade-in">
+      <img style="width: 100vw; height: auto;" src="/assets/icons/icons.png" alt="">
+      <h2>I am a Full-Stack Web Developer</h2>
+  </div>
+
+  <div class="mobile-card" data-aos="flip-left">
+      <img style="height: 150px; width: auto; margin-bottom: -20px;" src="https://i.imgur.com/jhTbk48.png" alt="">
+      <h2>from Kennebunk, ME</h2>
+  </div>
+
 </div>

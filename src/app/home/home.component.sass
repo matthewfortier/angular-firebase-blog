@@ -6,7 +6,7 @@ h1
     text-shadow: 0px 4px 3px rgba(0,0,0,0.4),0px 8px 13px rgba(0,0,0,0.1),0px 18px 23px rgba(0,0,0,0.1)
 
 h2
-    font-size: 50px
+    font-size: 55px
     color: #191e28
     font-family: 'Raleway', sans-serif
     font-weight: 500    
@@ -46,6 +46,73 @@ h3
     width: auto;
     box-shadow: 0px 20px 84px 0px #8e8e8e;
 
+
+.mobile-home
+    width: 100vw
+    margin-top: -90px
+    text-align: center
+
+    .mobile-landing
+        height: 100vh
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+
+    .mobile-card
+        height: 400px
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+
+.scroll-down
+    position: relative
+    width: 200px
+    bottom: -100px
+    margin: 0 auto
+    text-align: center
+    font-family: Roboto, sans-serif
+
+    .scroll-mouse
+        margin: 0 auto
+        height: 100px
+        width: 65px
+        border: 5px solid black
+        border-radius: 25px
+    
+        .scroll-wheel
+          height: 20px
+          width: 15px
+          background-color: black
+          border-radius: 25px
+          margin: 15px auto
+          animation: scroll 1s ease-in-out infinite
+
+        &.mobile
+            transform: rotate(180deg)
+
+    &.fade
+        opacity: 0
+        transition: all .5s ease-out
+      
+@keyframes scroll
+  100%
+    transform: translateY(50px) scale(.8)
+    opacity: .4
+      
+
+
+@media only screen and (max-width : 992px)
+    h1
+        font-size: 45px
+
+    h2
+        font-size: 25px
+
+    .screenshot
+      width: 100vw
+      height: auto
 
 
 

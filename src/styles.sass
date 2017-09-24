@@ -34,7 +34,7 @@ body
     z-index: 10
     background-color: #191e28
     display: flex
-    justify-content: space-around 
+    justify-content: space-around
     overflow: hidden
     position: fixed
     top: 0
@@ -175,34 +175,36 @@ body
 
 
 .mobile-links
-    position: absolute
-    top: -250px
-    left: 0
+    position: fixed
+    top: 0
+    right: 0
     z-index: 5
-    height: 245px
-    background-color: #f7f9fa
-    width: 100%
+    height: 100vh
+    width: 0
+    background-color: #191e28
+    opacity: .95
     display: flex
     justify-content: center
-    align-items: center
     transition: top .2s ease-out
+    color: white
+    font-size: 40px
     
     ul
         list-style-type: none
-        margin: 0
-        padding: 0
+        margin: 40px 0
+        padding-right: 15px
         width: 100%
 
     li
-        padding: 13px 0
+        position: relative
+        padding: 10px 0
         width: 100%
-        border-top: 2px solid darken(#f7f9fa, 5)
-        text-align: center
+        text-align: right
         cursor: pointer
 
     &.active
-        top: 44px
-        transition: top .2s ease-in
+        width: 100vw
+        transition: width .2s ease-in
 
 .container
     position: relative
@@ -211,12 +213,22 @@ body
 
 .slick-dots
     transform: scale(1.8)
-    
+
+
+@keyframes linkSlide
+    from
+        right: -40px
+        opacity: 0
+    to
+        right: 0px
+        opacity: 1
+
 
 @media only screen and (max-width : 992px)
     .navbar
         margin: 0
         padding: 0 15px
+        justify-content: center
 
         .logo .text
             font-size: .8em
@@ -236,6 +248,7 @@ body
 
     .navbar
         padding: 0 15px
+        justify-content: center
 
         .logo
             text-align: center
@@ -247,6 +260,7 @@ body
 @media only screen and (max-width : 340px)
     .navbar 
         padding: 0 15px
+        justify-content: center
 
         .logo .text
             font-size: .6em
