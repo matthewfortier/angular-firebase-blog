@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title }     from '@angular/platform-browser';
 
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -17,7 +18,9 @@ export class PortfolioComponent implements OnInit {
   items: FirebaseListObservable<any[]>;
   projects: Array<any>;
 
-  constructor(private projectsService: ProjectsService) { }
+  constructor(private projectsService: ProjectsService, private titleService: Title) { 
+    this.titleService.setTitle("Matthew Fortier | Portfolio");
+  }
 
   ngOnInit() {
     this.items = this.projectsService.getProjects();

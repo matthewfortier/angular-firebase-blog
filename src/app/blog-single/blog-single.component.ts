@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title }     from '@angular/platform-browser';
 
 import { Router, ActivatedRoute, ParamMap, UrlSegment } from '@angular/router';
 
@@ -30,10 +31,12 @@ export class BlogSingleComponent implements OnInit {
   constructor(public af: AngularFireDatabase, 
               private route: ActivatedRoute,
               private router: Router,
-              private postsService: PostsService) {
+              private postsService: PostsService,
+              private titleService: Title) {
 
     this.postsService.getPost(this.route.snapshot.paramMap.get('slug')).subscribe(result => {
       this.title = result[0].title;
+      this.titleService.setTitle(result[0].title);      
       this.hero = result[0].hero;
       this.slug = result[0].slug;
       this.body = result[0].body;

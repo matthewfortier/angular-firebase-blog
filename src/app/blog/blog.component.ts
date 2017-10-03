@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title }     from '@angular/platform-browser';
 
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -16,7 +17,9 @@ export class BlogComponent implements OnInit {
 
   items: FirebaseListObservable<any[]>;
 
-  constructor(private postsService: PostsService) { }
+  constructor(private postsService: PostsService, private titleService: Title) {
+    this.titleService.setTitle("Matthew Fortier | Blog");
+  }
 
   ngOnInit() {
     this.items = this.postsService.getPosts();

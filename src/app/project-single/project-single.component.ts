@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title }     from '@angular/platform-browser';
 
 import { Router, ActivatedRoute, ParamMap, UrlSegment } from '@angular/router';
 
@@ -45,10 +46,12 @@ export class ProjectSingleComponent implements OnInit {
   constructor(public af: AngularFireDatabase, 
     private route: ActivatedRoute,
     private router: Router,
-    private projectsService: ProjectsService) {
+    private projectsService: ProjectsService,
+    private titleService: Title) {
 
       this.projectsService.getProject(this.route.snapshot.paramMap.get('slug')).subscribe(result => {
         this.title = result[0].title;
+        this.titleService.setTitle(this.title);
 
         console.log(result[0].hero)
         for (let image of result[0].hero.split(',')) {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Inject } from "@angular/core";
-import { DOCUMENT } from '@angular/platform-browser';
+import { DOCUMENT, Title } from '@angular/platform-browser';
 import { HostListener} from "@angular/core";
 
 @Component({
@@ -14,7 +14,9 @@ export class HomeComponent implements OnInit {
   scrollFade: boolean = false;
   scrollMobile: boolean = false;
 
-  constructor(@Inject(DOCUMENT) private document: Document) { }
+  constructor(@Inject(DOCUMENT) private document: Document, private titleService: Title) { 
+    this.titleService.setTitle("Matthew Fortier | Home")
+  }
 
   ngOnInit() {
     if (window.innerWidth < 992)
