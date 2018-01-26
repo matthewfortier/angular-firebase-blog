@@ -12,34 +12,27 @@ import { Router, ActivatedRoute, ParamMap, UrlSegment } from '@angular/router';
 })
 export class AppComponent {
 
-  mobileMenuOut: boolean = false;
-  shadow: boolean = true;
-  scrollTop: number = 0;
+  hideSidebar: boolean = true;
   
-  constructor(@Inject(DOCUMENT) private document: Document, private route:ActivatedRoute) {
-    let url = this.route.url.subscribe(result => {
-      console.log('Result' + result.toString());
-      if (result.toString() == ' ')
-        this.shadow = false;
-    });
+  constructor(private router: Router) {
+    
   }
 
-  mobileMenu() {
-    this.mobileMenuOut = !this.mobileMenuOut;
+  ngOnInit() {
   }
 
-  @HostListener("window:scroll", [])
-  onWindowScroll() {
-    this.scrollTop = this.document.body.scrollTop;
+  // @HostListener("window:scroll", [])
+  // onWindowScroll() {
+  //   this.scrollTop = this.document.body.scrollTop;
 
-    let h = this.document.documentElement;
-    let b = this.document.body;
-    let st = 'scrollTop';
-    let sh = 'scrollHeight';
+  //   let h = this.document.documentElement;
+  //   let b = this.document.body;
+  //   let st = 'scrollTop';
+  //   let sh = 'scrollHeight';
 
-    let percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+  //   let percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
 
-    this.document.getElementById("scroll-bar").style.width = percent + '%';
-  }
+  //   this.document.getElementById("scroll-bar").style.width = percent + '%';
+  // }
 
 }

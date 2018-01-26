@@ -1,24 +1,25 @@
 .page-content
     display: flex
+    justify-content: center
 
     .left
-        width: 22%
+        width: 5%
         //background-color: #f7f9fa
 
     .right
-        width: 22%
+        width: 5%
         //background-color: #f7f9fa
 
     .post-single-body
         z-index: 10
-        width: 56%
+        width: 80%
         background-color: white
         color: #3A4145
         //color: #A1B6CE
         line-height: 1.6em
         //border-left: 1px solid rgba(0,0,0,0.2)
         //border-right: 1px solid rgba(0,0,0,0.2)   
-        box-shadow: 0px 1px 13px rgba(199, 198, 198, 1)
+        box-shadow: 0px 0px 40px -12px rgba(0,0,0,0.75);
 
         .post-header
             display: flex
@@ -41,12 +42,20 @@
 
             .post-share
                 i
+                    height: 40px
+                    width: 40px
                     font-size: 25px
                     cursor: pointer
-                    margin-left: 10px
+                    //margin-left: 0 auto
+                    border-radius: 50%
+                    text-align: center
+                    vertical-align: center
+                    line-height: 1.6
 
                     &:hover
-                        color: lighten(black, 40)
+                        //color: lighten(black, 40)
+                        background-color: #eeeeee
+                        transition: all .1s ease-in-out
 
             #timestamp
                 color: rgba(0, 0, 0, .6)
