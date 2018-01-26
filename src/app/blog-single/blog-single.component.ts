@@ -42,11 +42,16 @@ export class BlogSingleComponent implements OnInit {
       this.body = result[0].body;
       this.created = result[0].created;
       this.updated = result[0].updated;
+      this.url = this.router.url;
     });
   }
 
   ngOnInit() {
   
   }
+
+  onComment(event) {}
+  onReady(event) {}
+  onPaginate(event){}
 
 }
