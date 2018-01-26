@@ -32,6 +32,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ProjectComponent } from './project/project.component';
 import { ProjectSingleComponent } from './project-single/project-single.component';
+import { ReversePipe } from './reverse.pipe';
 
 export const firebaseConfig = {
   apiKey: firebase.apiKey,
@@ -71,7 +72,8 @@ const appRoutes: Routes = [
     ResumeComponent,
     PortfolioComponent,
     ProjectComponent,
-    ProjectSingleComponent
+    ProjectSingleComponent,
+    ReversePipe,
   ],
   imports: [
     RouterModule.forRoot(

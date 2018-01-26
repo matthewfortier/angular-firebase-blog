@@ -1,69 +1,22 @@
-<nav class="navbar" [class.shadow]="shadow"> 
-    <a href="/">
-        <div class="logo">
-            <div class="spinner">
-                <span></span>   
-            </div>
-            <div class="text">
-                <span style="color: #ccc; font-family: 'Raleway', sans-serif; font-weight: 500;">MATTHEW</span>
-                <span style="color: white; font-family: 'Raleway', sans-serif; font-weight: 300;">FORTIER</span>
-            </div>
-        </div>
-    </a>
-    <div class="links">
-        <ul>
-            <a href="/blog">
-                <li class="link">
-                    <span></span>
-                    <span>Blog</span>
-                </li>
-            </a>
-            <a href="/portfolio">
-                <li class="link">
-                    <span></span>
-                    <span>Portfolio</span>
-                </li>
-            </a>
-            <a href="/resume">
-                <li class="link">
-                    <span></span>
-                    <span>Resume</span>
-                </li>
-            </a>
-            <a href="/connect">
-                <li class="link">
-                    <span></span>
-                    <span>Connect</span>
-                </li>
-            </a>
-        </ul>
+<div class="sidebar"> 
+    <div class="logo">
+        <a href="/">
+            <span id="main">Matthew Fortier</span>
+            <div class="underline"></div>
+            <span id="sub">Front End Developer</span>
+        </a>
     </div>
-    <div class="menu-icon" (click)="mobileMenu()" [class.active]="mobileMenuOut">
-        <span></span>
-        <div class="menu-icon-middle">
-            <span></span>
-            <span></span>    
-        </div>
-        <span></span>
-    </div>
-    <span id="scroll-bar" [style.width]="scrollTop"></span>    
-</nav>
-<div class="mobile-links" [class.active]="mobileMenuOut">
     <ul>
-        <a href="/blog">
-            <li>Blog</li>
-        </a>
-        <a href="/portfolio">
-            <li>Portfolio</li>
-        </a>
-        <a href="/resume">
-            <li>Resume</li>
-        </a>
-        <a href="/connect">
-            <li>Connect</li>
-        </a>
+        <li routerLink="/blog">Blog</li>
+        <span class="separator"></span>
+        <li routerLink="/portfolio">Portfolio</li>
+        <span class="separator"></span>
+        <li routerLink="/resume">Resume</li>
+        <span class="separator"></span>
+        <li routerLink="/connect">Connect</li>
     </ul>
 </div>
+
 <div class="container">
     <router-outlet></router-outlet>
 </div>

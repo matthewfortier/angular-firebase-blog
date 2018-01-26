@@ -1,42 +1,25 @@
 .portfolio-content
     text-align: center
     padding-top: 20px
+    display: flex
+    justify-content: center
 
     .projects
-        width: 78%
-        margin-left: 11%
+        width: 90%
         text-align: center
         display: flex
         justify-content: space-between
         flex-wrap: wrap
 
         .project
-            height: 50vh
-            width: 37vw
-            margin-bottom: 50px
-            box-shadow: 0 30px 40px -15px rgba(0,0,0,0.35)
+            float:left
             position: relative
-            display: flex
-            justify-content: center
-            align-items: center
-            flex-direction: column
+            width: 46%
+            padding-bottom: 40%
+            margin: 1.9%
+            box-shadow: 0 30px 40px -15px rgba(0,0,0,0.35)
             cursor: pointer
             transition: all .2s ease-in-out
-
-            span
-                font-size: 35px
-                padding: 5px 20px
-                margin: 5px
-                border-radius: 5px
-                background-color: white
-                color: #3A4145
-                box-shadow: 0 30px 40px -15px rgba(0,0,0,0.35)
-                transition: height .2s ease-in-out
-                z-index: 5
-
-            span:nth-child(3)
-                display: none
-                font-size: 20px                
 
             .project-image
                 position: absolute
@@ -76,14 +59,7 @@
 
 @media only screen and (max-width : 1024px)
     .portfolio-content
-        display: flex
-        justify-content: center
+        margin-top: -45px
 
-        .projects
-            margin-left: 0
-            width: 100%
-            display: block
-
-            .project
-                width: 90vw
-                margin-left: 5vw
+    .project
+        width: 55%

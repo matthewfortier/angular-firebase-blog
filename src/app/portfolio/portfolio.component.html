@@ -3,8 +3,6 @@
       <div class="projects">
         <div class="project" [routerLink]="['/portfolio/' + item.slug]" *ngFor="let item of items | async">
           <div class="project-image" [ngStyle]="{'background': 'url(' + item.hero.split(',')[0] + ')', 'background-size': 'cover', 'background-position': 'center'}"></div>
-          <span>{{ item.title }}</span>
-          <span>Learn More</span>      
         </div>
       </div>
     </div>

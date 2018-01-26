@@ -1,19 +1,19 @@
 <div class="project-container">
-  <div class="center" *ngIf="user">
+  <div *ngIf="user">
       <label>Project Title</label>
       <input class="form-element" class="form-element" type="text"  placeholder="Title" [(ngModel)]="title" />
       <label>Project Images</label>
-      <textarea class="form-element" placeholder="Project Body" [(ngModel)]="hero"></textarea>      
+      <textarea class="form-element textarea" style="height: 50px;" placeholder="Project Images" [(ngModel)]="hero"></textarea>      
       <label>Project Codepen</label>
-      <textarea class="form-element" placeholder="Project Body" [(ngModel)]="codepen"></textarea>      
+      <textarea class="form-element textarea" style="height: 100px;" placeholder="Project Body" [(ngModel)]="codepen"></textarea>      
       <label>Project Content</label>        
-      <textarea class="form-element textarea" placeholder="Project Body" (keyup.enter)="create()" [(ngModel)]="body"></textarea>
+      <textarea class="form-element textarea" style="height: 400px;" placeholder="Project Body" (keyup.enter)="create()" [(ngModel)]="body"></textarea>
       <div class="buttons">
-          <button class="btn" (click)="create()" *ngIf="!slug">Create Post</button>
-          <button class="btn" (click)="update()" *ngIf="slug">Update Post</button>        
-          <button class="btn" (click)="delete()" *ngIf="slug">Delete Post</button>        
+          <button class="btn" (click)="create()" *ngIf="!slug">Create Project</button>
+          <button class="btn" (click)="update()" *ngIf="slug">Update Project</button>        
+          <button class="btn" (click)="delete()" *ngIf="slug">Delete Project</button>        
       </div>
   </div>
   
-  <li (click)="logout()">Logout</li>
+  <button id="logout" (click)="logout()">Logout</button>
 </div>

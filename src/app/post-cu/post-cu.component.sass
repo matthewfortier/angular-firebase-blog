@@ -1,57 +1,54 @@
 .post-container
-    margin-top: -100px
-    height: 100vh
-    width: 100vw
     display: flex
     justify-content: center
     align-items: center
-
-.center
-    position: absolute
-    height: 800px
-    width: 800px
-    display: flex
-    justify-content: center
-    align-items: center
-    flex-direction: column
+    background-color: #f7f9fa
+    padding-top: 25px   
 
 .form-element
     display: block
     height: 35px
     width: 800px
-    background-color: #ddd
-    border: none
+    border: 1px solid lighten(dodgerblue, 10)
     border-radius: 5px
     margin: 15px
     padding-left: 15px
     outline: none
 
-    &.textarea
-        padding-top: 15px
-        height: 400px
-        font-family: 'Arial'
+.textarea
+    padding-top: 10px
+    font-family: 'Arial'
 
+label
+    text-align: left
 
-.btn
-    height: 35px
-    width: 150px
-    border: none
-    border-radius: 5px
-    background-color: dodgerblue
-    font-size: 1.1em
-    font-weight: bold
-    color: white
-    cursor: pointer
+.buttons
+    display: flex
+    justify-content: center
 
-li
-    list-style-type: none
+    .btn
+        height: 35px
+        width: 150px
+        margin: 5px
+        border: 1px solid lighten(dodgerblue, 10)
+        border-radius: 5px
+        background-color: white
+        font-size: 1.1em
+        font-weight: bold
+        color: lighten(dodgerblue, 10)
+        cursor: pointer
+
+#logout
     position: absolute
     top: 0
     right: 0
-    margin: 15px
-    padding: 5px
+    margin: 5px
+    height: 35px
+    width: 150px
+    border: 1px solid lighten(dodgerblue, 10)
     border-radius: 5px
-    background-color: dodgerblue
-    color: white
-    font-family: 'Arial'
+    background-color: white
+    font-size: 1.1em
+    font-weight: bold
+    color: lighten(dodgerblue, 10)
     cursor: pointer
